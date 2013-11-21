@@ -35,6 +35,9 @@ set smartindent
 "bell
 set noerrorbells
 
+"scroll
+set scrolloff=10
+
 "color
 colorscheme molokai
 syntax on
