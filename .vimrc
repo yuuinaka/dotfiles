@@ -22,7 +22,7 @@ set ignorecase
 
 "env
 set mouse=a
-set clipboard=unnamed,unnamedplus
+set clipboard=unnamed,autoselect
 
 "indent
 set expandtab
@@ -45,6 +45,9 @@ syntax on
 "cursor position
 au BufWritePost * mkview
 autocmd BufReadPost * loadview
+
+"command
+set wildmenu
 
 "ZSpace
 function! ZSpace()
@@ -73,6 +76,7 @@ function! s:LoadBundles()
   NeoBundle 'tomasr/molokai'
   NeoBundle 'bling/vim-airline'
   NeoBundle 'Shougo/neocomplcache'
+  NeoBundle 'thinca/vim-quickrun'
 endfunction
 
 function! s:InitNeoBundle()
@@ -99,4 +103,6 @@ call s:InitNeoBundle()
 
 "neocomplcache
 let g:neocomplcache_enable_at_startup=1
-
+let g:neocomplcache_enable_smart_case=1
+let g:neocomplcache_enable_underbar_completion=1
+inoremap <expr><Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
