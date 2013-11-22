@@ -71,12 +71,15 @@ endfunction
 function! s:LoadBundles()
   NeoBundle 'Shougo/neobundle.vim'
   NeoBundle 'tpope/vim-surround'
-  NeoBundle 'scrooloose/nerdtree'
-  NeoBundle 'mattn/emmet-vim'
   NeoBundle 'tomasr/molokai'
   NeoBundle 'bling/vim-airline'
-  NeoBundle 'Shougo/neocomplcache'
+  NeoBundle 'scrooloose/nerdtree'
   NeoBundle 'thinca/vim-quickrun'
+  NeoBundle 'Shougo/neocomplcache'
+  NeoBundle 'mattn/emmet-vim'
+  NeoBundle 'othree/html5.vim'
+  NeoBundle 'hail2u/vim-css3-syntax'
+  NeoBundle 'pangloss/vim-javascript'
 endfunction
 
 function! s:InitNeoBundle()
