@@ -109,3 +109,9 @@ let g:neocomplcache_enable_at_startup=1
 let g:neocomplcache_enable_smart_case=1
 let g:neocomplcache_enable_underbar_completion=1
 inoremap <expr><Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
+
+"insert date
+inoremap <expr> ,dd strftime('%Y/%m/%d') 
+
+"edit .vimrc 
+nnoremap <silent> <Space>. :<C-u>edit $MYVIMRC<Enter>
