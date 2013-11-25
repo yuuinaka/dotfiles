@@ -80,6 +80,7 @@ function! s:LoadBundles()
   NeoBundle 'othree/html5.vim'
   NeoBundle 'hail2u/vim-css3-syntax'
   NeoBundle 'pangloss/vim-javascript'
+  NeoBundle 'tpope/vim-markdown'
 endfunction
 
 function! s:InitNeoBundle()
@@ -115,3 +116,4 @@ inoremap <expr> ,dd strftime('%Y/%m/%d')
 
 "edit .vimrc 
 nnoremap <silent> <Space>. :<C-u>edit $MYVIMRC<Enter>
+
