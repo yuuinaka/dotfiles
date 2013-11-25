@@ -117,3 +117,11 @@ inoremap <expr> ,dd strftime('%Y/%m/%d')
 "edit .vimrc 
 nnoremap <silent> <Space>. :<C-u>edit $MYVIMRC<Enter>
 
+"keymap
+inoremap <silent> jj <ESC>
+inoremap <silent> kk <ESC>
+inoremap <C-j> <Down>
+inoremap <C-k> <Up>
+inoremap <C-h> <Left>
+inoremap <C-l> <Right>
+
