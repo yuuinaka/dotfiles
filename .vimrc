@@ -1,3 +1,6 @@
+"encoding
+set encoding=utf-8
+
 "disp
 set ruler
 set number
@@ -82,6 +85,7 @@ function! s:LoadBundles()
   NeoBundle 'pangloss/vim-javascript'
   NeoBundle 'tpope/vim-markdown'
   NeoBundle 'tyru/open-browser.vim'
+  NeoBundle 'Shougo/unite.vim'
 endfunction
 
 function! s:InitNeoBundle()
@@ -117,10 +121,17 @@ let g:user_emmet_settings = {
 \   'lang' : 'ja'
 \ }
 
-"insert date
+"quickrun 
+"markdown preview <\r>
+let g:quickrun_config = {}
+let g:quickrun_config['markdown'] = {
+\ 'outputter' : 'browser'
+\ }
+
+"insert date <,dd>
 inoremap <expr> ,dd strftime('%Y/%m/%d') 
 
-"edit .vimrc 
+"edit .vimrc <Space>.
 nnoremap <silent> <Space>. :<C-u>edit $MYVIMRC<Enter>
 
 "keymap
