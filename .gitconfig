@@ -1,0 +1,7 @@
+[user]
+	name = yuuinaka
+	email = yuuinaka@gmail.com
+[core]
+	editor = /usr/bin/vim
+[color]
+	ui = auto

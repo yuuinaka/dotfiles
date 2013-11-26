@@ -81,6 +81,7 @@ function! s:LoadBundles()
   NeoBundle 'hail2u/vim-css3-syntax'
   NeoBundle 'pangloss/vim-javascript'
   NeoBundle 'tpope/vim-markdown'
+  NeoBundle 'tyru/open-browser.vim'
 endfunction
 
 function! s:InitNeoBundle()
@@ -110,6 +111,11 @@ let g:neocomplcache_enable_at_startup=1
 let g:neocomplcache_enable_smart_case=1
 let g:neocomplcache_enable_underbar_completion=1
 inoremap <expr><Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
+
+"emmet
+let g:user_emmet_settings = {
+\   'lang' : 'ja'
+\ }
 
 "insert date
 inoremap <expr> ,dd strftime('%Y/%m/%d') 
