@@ -1,2 +1,5 @@
 dotfiles
 ========
+* git
+* zsh
+* MacVim
