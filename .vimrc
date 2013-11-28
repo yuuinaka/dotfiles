@@ -110,7 +110,9 @@ endfunction
 
 call s:InitNeoBundle()
 
-"neocomplcache
+"nerdtree
+let NERDTreeWinSize=20
+
 let g:neocomplcache_enable_at_startup=1
 let g:neocomplcache_enable_smart_case=1
 let g:neocomplcache_enable_underbar_completion=1
