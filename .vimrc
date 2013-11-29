@@ -52,6 +52,24 @@ autocmd BufReadPost * loadview
 "command
 set wildmenu
 
+"insert date <,dd>
+inoremap <expr> ,dd strftime('%Y/%m/%d') 
+
+"edit .vimrc <Space>.
+nnoremap <silent> <Space>. :<C-u>edit $MYVIMRC<Enter>
+
+"keymap
+noremap J 10j
+noremap K 10k
+noremap L 10l
+noremap H 10h
+inoremap <silent> jj <ESC>
+inoremap <silent> kk <ESC>
+inoremap <C-j> <Down>
+inoremap <C-k> <Up>
+inoremap <C-h> <Left>
+inoremap <C-l> <Right>
+
 "ZSpace
 function! ZSpace()
   highlight ZSpace cterm=underline ctermbg=yellow gui=underline guifg=darkgrey
@@ -86,6 +104,7 @@ function! s:LoadBundles()
   NeoBundle 'tpope/vim-markdown'
   NeoBundle 'tyru/open-browser.vim'
   NeoBundle 'Shougo/unite.vim'
+  NeoBundle 'Lokaltog/vim-easymotion'
 endfunction
 
 function! s:InitNeoBundle()
@@ -113,6 +132,7 @@ call s:InitNeoBundle()
 "nerdtree
 let NERDTreeWinSize=20
 
+"neocomplcache
 let g:neocomplcache_enable_at_startup=1
 let g:neocomplcache_enable_smart_case=1
 let g:neocomplcache_enable_underbar_completion=1
@@ -130,17 +150,9 @@ let g:quickrun_config['markdown'] = {
 \ 'outputter' : 'browser'
 \ }
 
-"insert date <,dd>
-inoremap <expr> ,dd strftime('%Y/%m/%d') 
-
-"edit .vimrc <Space>.
-nnoremap <silent> <Space>. :<C-u>edit $MYVIMRC<Enter>
-
-"keymap
-inoremap <silent> jj <ESC>
-inoremap <silent> kk <ESC>
-inoremap <C-j> <Down>
-inoremap <C-k> <Up>
-inoremap <C-h> <Left>
-inoremap <C-l> <Right>
-
+"easymotion
+let g:EasyMotion_keys='hjklasdfgyuiopqwertnmzxcvbHJKLASDFGYUIOPQWERTNMZXCVB'
+let g:EasyMotion_leader_key=";"
+let g:EasyMotion_grouping=1
+hi EasyMotionTarget ctermbg=none ctermfg=red
+hi EasyMotionShade  ctermbg=none ctermfg=blue
