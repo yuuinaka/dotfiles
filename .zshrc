@@ -19,9 +19,9 @@ case ${UID} in
     PROMPT="%{${fg[white]}%}${HOST%%.*} ${PROMPT}"
   ;;
 *)
-  PROMPT="%{${fg[yellow]}%}%/%%%{${reset_color}%} "
+  PROMPT="%{${fg[yellow]}%}%/%% (*'-')/%{${reset_color}%} "
   PROMPT2="%{${fg[yellow]}%}%_%%%{${reset_color}%} "
-  SPROMPT="%{${fg[yellow]}%}%r is correct? [n,y,a,e]:%{${reset_color}%} "
+  SPROMPT="%{${fg[yellow]}%}% (*'~'%)? < もしかして%{${reset_color}%}%r%{${fg[yellow]}%}% かな? [n,y,a,e]:%{${reset_color}%} "
   [ -n "${REMOTEHOST}${SSH_CONNECTION}" ] && 
     PROMPT="%{${fg[white]}%}${HOST%%.*} ${PROMPT}"
   ;;
@@ -41,10 +41,13 @@ kterm*|xterm*)
 esac
 
 # alias 
-alias ls='ls -G -F'
+alias ls='ls -G -F -a'
 
 # MacVim
 alias vim='env LANG=ja_JP.UTF-8 /Applications/MacVim.app/Contents/MacOS/Vim "$@"'
+alias .vr='vim $HOME/.vimrc'
+alias .zr='vim $HOME/.zshrc'
+alias .gc='vim $HOME/.gitconfig'
 
 # setopt
 # cd
@@ -62,4 +65,4 @@ setopt auto_menu
 setopt nolistbeep
 
 # func
-functions chpwd(){ ls -F }
+functions chpwd(){ ls -G -F -a}
