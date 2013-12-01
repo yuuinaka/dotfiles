@@ -38,6 +38,7 @@ set autoindent
 set smartindent
 
 "bell
+set vb t_vb=
 set noerrorbells
 
 "scroll
