@@ -136,6 +136,7 @@ call s:InitNeoBundle()
 
 "nerdtree
 autocmd VimEnter * NERDTree
+autocmd VimEnter * wincmd p
 "autocmd VimEnter * if !argc() | NERDTree | endif
 autocmd BufEnter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
 let NERDTreeWinSize=30
