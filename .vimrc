@@ -135,9 +135,10 @@ endfunction
 call s:InitNeoBundle()
 
 "nerdtree
-autocmd VimEnter * if !argc() | NERDTree | endif
+autocmd VimEnter * NERDTree
+"autocmd VimEnter * if !argc() | NERDTree | endif
 autocmd BufEnter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
-let NERDTreeWinSize=20
+let NERDTreeWinSize=30
 let g:NERDTreeShowHidden=1
 let g:NERDTreeShowBookmarks=1
 let g:NERDTreeWinPos="right"
