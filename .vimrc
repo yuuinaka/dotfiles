@@ -66,6 +66,8 @@ noremap J 10j
 noremap K 10k
 noremap L 10l
 noremap H 10h
+noremap j gj
+noremap k gk
 inoremap <silent> jj <ESC>
 inoremap <silent> kk <ESC>
 inoremap <C-j> <Down>
