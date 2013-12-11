@@ -114,6 +114,7 @@ function! s:LoadBundles()
   NeoBundle 'tyru/open-browser.vim'
   NeoBundle 'Shougo/unite.vim'
   NeoBundle 'Lokaltog/vim-easymotion'
+  NeoBundle 'Yggdroot/indentLine'
 endfunction
 
 function! s:InitNeoBundle()
