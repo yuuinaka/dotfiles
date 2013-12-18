@@ -45,7 +45,8 @@ set noerrorbells
 set scrolloff=10
 
 "color
-colorscheme molokai
+"colorscheme molokai
+colorscheme jellybeans
 syntax on
 
 "cursor position
@@ -55,13 +56,8 @@ autocmd BufReadPost * loadview
 "command
 set wildmenu
 
-"insert date <,dd>
-inoremap <expr> ,dd strftime('%Y/%m/%d') 
-
-"edit .vimrc <Space>.
-nnoremap <silent> <Space>. :<C-u>edit $MYVIMRC<Enter>
-
 "keymap
+"move
 noremap J 10j
 noremap K 10k
 noremap L 10l
@@ -70,14 +66,22 @@ nnoremap j gj
 xnoremap j gj
 nnoremap k gk
 xnoremap k gk
-inoremap <silent> jj <ESC>
-inoremap <silent> kk <ESC>
+nnoremap n nzz
+nnoremap N Nzz
 inoremap <C-j> <Down>
 inoremap <C-k> <Up>
 inoremap <C-h> <Left>
 inoremap <C-l> <Right>
-nnoremap n nzz
-nnoremap N Nzz
+"count
+nnoremap ,w :%s///gn<CR>
+nnoremap ,c :%s/.//gn<CR>
+"alt ESC
+inoremap <silent> jj <ESC>
+inoremap <silent> kk <ESC>
+"insert date <,dd>
+inoremap <expr> ,dd strftime('%Y/%m/%d') 
+"edit .vimrc <Space>.
+nnoremap <silent> <Space>. :<C-u>edit $MYVIMRC<CR>
 
 "ZSpace
 function! ZSpace()
@@ -102,6 +106,7 @@ function! s:LoadBundles()
   NeoBundle 'Shougo/neobundle.vim'
   NeoBundle 'tpope/vim-surround'
   NeoBundle 'tomasr/molokai'
+  NeoBundle 'nanotech/jellybeans.vim'
   NeoBundle 'bling/vim-airline'
   NeoBundle 'scrooloose/nerdtree'
   NeoBundle 'thinca/vim-quickrun'
@@ -157,7 +162,12 @@ inoremap <expr><Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
 
 "emmet
 let g:user_emmet_settings = {
-\   'lang' : 'ja'
+\   'lang' : 'ja',
+\   'javascript' : {
+\     'snippets' : {
+\       'jq' : "\\$(function() {\n\t${cursor}${child}\n});"
+\     }
+\   }
 \ }
 
 "quickrun 
