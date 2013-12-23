@@ -42,6 +42,9 @@ esac
 
 # alias 
 alias ls='ls -G -F -a'
+alias rm='rm -i'
+alias cp='cp -i'
+alias mv='mv -i'
 
 # MacVim
 alias vim='env LANG=ja_JP.UTF-8 /Applications/MacVim.app/Contents/MacOS/Vim "$@"'
@@ -63,6 +66,10 @@ setopt list_packed
 setopt auto_menu
 
 setopt nolistbeep
+
+setopt share_history
+setopt hist_ignore_all_dups
+setopt hist_save_nodups
 
 # func
 functions chpwd(){ ls -G -F -a}
@@ -86,3 +93,10 @@ functions do_enter(){
 zle -N do_enter
 bindkey '^m' do_enter
 
+# func Git <u> repo top
+# function u(){
+#  cd ./$(git rev-parse --show-cdup)
+#  if [ $# = 1 ]; then
+#    cd $1
+#  fi
+# }
