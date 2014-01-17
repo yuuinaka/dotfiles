@@ -47,6 +47,7 @@ set scrolloff=10
 "color
 "colorscheme molokai
 colorscheme jellybeans
+"colorscheme iceberg
 syntax on
 
 "cursor position
@@ -58,10 +59,10 @@ set wildmenu
 
 "keymap
 "move
-noremap J 10j
-noremap K 10k
-noremap L 10l
-noremap H 10h
+noremap J 5j
+noremap K 5k
+noremap L 5l
+noremap H 5h
 nnoremap j gj
 xnoremap j gj
 nnoremap k gk
@@ -107,6 +108,7 @@ function! s:LoadBundles()
   NeoBundle 'tpope/vim-surround'
   NeoBundle 'tomasr/molokai'
   NeoBundle 'nanotech/jellybeans.vim'
+  NeoBundle 'cocopon/iceberg.vim'
   NeoBundle 'bling/vim-airline'
   NeoBundle 'scrooloose/nerdtree'
   NeoBundle 'thinca/vim-quickrun'
