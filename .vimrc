@@ -122,6 +122,7 @@ function! s:LoadBundles()
   NeoBundle 'Shougo/unite.vim'
   NeoBundle 'Lokaltog/vim-easymotion'
   NeoBundle 'Yggdroot/indentLine'
+  NeoBundle 'vim-scripts/matchit.zip'
 endfunction
 
 function! s:InitNeoBundle()
