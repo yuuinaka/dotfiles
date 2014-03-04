@@ -98,6 +98,12 @@ if has('syntax')
   call ZSpace()
 endif
 
+"numberwidth
+augroup numberwidth
+  autocmd!
+  autocmd BufEnter,WinEnter,BufWinEnter * let &l:numberwidth = len(line("$")) + 2
+augroup END
+
 "bundle
 function! s:WithoutBundles()
   colorscheme desert
