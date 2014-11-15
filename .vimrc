@@ -10,6 +10,7 @@ set showmatch
 set cursorline
 set cmdheight=2
 set laststatus=2
+set ambiwidth=double
 
 "move
 set whichwrap=b,s,h,l
@@ -129,6 +130,7 @@ function! s:LoadBundles()
   NeoBundle 'Lokaltog/vim-easymotion'
   NeoBundle 'Yggdroot/indentLine'
   NeoBundle 'vim-scripts/matchit.zip'
+  NeoBundle 'groenewege/vim-less'
 endfunction
 
 function! s:InitNeoBundle()
