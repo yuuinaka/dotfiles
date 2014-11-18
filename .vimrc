@@ -131,6 +131,7 @@ function! s:LoadBundles()
   NeoBundle 'Yggdroot/indentLine'
   NeoBundle 'vim-scripts/matchit.zip'
   NeoBundle 'groenewege/vim-less'
+  NeoBundle 'leafgarland/typescript-vim'
 endfunction
 
 function! s:InitNeoBundle()
@@ -140,8 +141,9 @@ function! s:InitNeoBundle()
       set runtimepath+=~/.vim/bundle/neobundle.vim/
     endif
     try
-      call neobundle#rc(expand('~/.vim/bundle/'))
+      call neobundle#begin(expand('~/.vim/bundle/'))
       call s:LoadBundles()
+      call neobundle#end()
     catch
       call s:WithoutBundles()
     endtry
