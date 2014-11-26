@@ -6,7 +6,9 @@
 [color]
 	ui = auto
 [alias]
-  st = status -sb
+  b = branch
+  co = checkout
+  st = status
   df = diff
   ca = commit -a
   ps = push
