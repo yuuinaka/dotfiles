@@ -70,6 +70,7 @@ nnoremap k gk
 xnoremap k gk
 nnoremap n nzz
 nnoremap N Nzz
+noremap <Tab> <C-w>w
 inoremap <C-j> <Down>
 inoremap <C-k> <Up>
 inoremap <C-h> <Left>
@@ -84,6 +85,13 @@ inoremap <silent> kk <ESC>
 inoremap <expr> ,dd strftime('%Y/%m/%d') 
 "edit .vimrc <Space>.
 nnoremap <silent> <Space>. :<C-u>edit $MYVIMRC<CR>
+"insert complete
+inoremap { {}<Left>
+inoremap [ []<Left>
+inoremap ( ()<Left>
+inoremap " ""<Left>
+inoremap ' ''<Left>
+inoremap < <><Left>
 
 "ZSpace
 function! ZSpace()
@@ -132,6 +140,7 @@ function! s:LoadBundles()
   NeoBundle 'vim-scripts/matchit.zip'
   NeoBundle 'groenewege/vim-less'
   NeoBundle 'leafgarland/typescript-vim'
+  NeoBundle 'osyo-manga/vim-over'
 endfunction
 
 function! s:InitNeoBundle()
