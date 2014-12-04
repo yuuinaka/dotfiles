@@ -46,6 +46,13 @@ alias rm='rm -i'
 alias cp='cp -i'
 alias mv='mv -i'
 alias g='git'
+alias gps='git push'
+alias gpl='git pull'
+alias gdf='git diff'
+alias gs='git status'
+alias gb='git branch'
+alias gco='git checkout'
+alias gca='git commit -a'
 
 # MacVim
 if [[ -d /Applications/MacVim.app ]]; then
