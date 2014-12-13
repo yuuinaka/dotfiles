@@ -86,12 +86,12 @@ inoremap <expr> ,dd strftime('%Y/%m/%d')
 "edit .vimrc <Space>.
 nnoremap <silent> <Space>. :<C-u>edit $MYVIMRC<CR>
 "insert complete
-inoremap { {}<Left>
-inoremap [ []<Left>
-inoremap ( ()<Left>
-inoremap " ""<Left>
-inoremap ' ''<Left>
-inoremap < <><Left>
+"inoremap { {}<Left>
+"inoremap [ []<Left>
+"inoremap ( ()<Left>
+"inoremap " ""<Left>
+"inoremap ' ''<Left>
+"inoremap < <><Left>
 
 "ZSpace
 function! ZSpace()
