@@ -25,6 +25,7 @@ set wrapscan
 set incsearch
 set smartcase
 set ignorecase
+set grepprg=internal
 
 "env
 set mouse=a
