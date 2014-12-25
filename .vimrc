@@ -7,10 +7,13 @@ set encoding=utf-8
 set ruler
 set number
 set showmatch
+set matchtime=1
 set cursorline
 set cmdheight=2
 set laststatus=2
+set pumheight=10
 set ambiwidth=double
+set display=lastline
 
 "move
 set whichwrap=b,s,h,l
@@ -76,7 +79,10 @@ inoremap <C-j> <Down>
 inoremap <C-k> <Up>
 inoremap <C-h> <Left>
 inoremap <C-l> <Right>
+nnoremap Y y$
 "count
+nnoremap + <C-a>
+nnoremap - <C-x>
 nnoremap ,w :%s///gn<CR>
 nnoremap ,c :%s/.//gn<CR>
 "alt ESC
@@ -138,7 +144,7 @@ function! s:LoadBundles()
   NeoBundle 'Shougo/unite.vim'
   NeoBundle 'Lokaltog/vim-easymotion'
   NeoBundle 'Yggdroot/indentLine'
-  NeoBundle 'vim-scripts/matchit.zip'
+  NeoBundle 'tmhedberg/matchit'
   NeoBundle 'groenewege/vim-less'
   NeoBundle 'leafgarland/typescript-vim'
   NeoBundle 'osyo-manga/vim-over'
