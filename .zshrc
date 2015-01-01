@@ -9,6 +9,19 @@ compinit
 autoload -Uz colors
 colors
 
+# title
+case "${TERM}" in
+kterm*|xterm*)
+  precmd() {
+    echo -ne "\033]0;${PWD}\007"
+  }
+  export LSCOLORS=exfxcxdxbxegedabagacad
+  export LS_COLORS='di=34:ln=35:so=32:pi=33:ex=31:bd=46;34:cd=43;34:su=41;30:sg=46;30:tw=42;30:ow=43;30'
+  zstyle ':completion:*' list-colors \
+    'di=34' 'ln=35' 'so=32' 'ex=31' 'bd=46;34' 'cd=43;34'
+  ;;
+esac
+
 # prompt
 case ${UID} in
 0)
@@ -26,25 +39,30 @@ case ${UID} in
     PROMPT="%{${fg[white]}%}${HOST%%.*} ${PROMPT}"
   ;;
 esac
-
-# title
-case "${TERM}" in
-kterm*|xterm*)
-  precmd() {
-    echo -ne "\033]0;${PWD}\007"
-  }
-  export LSCOLORS=exfxcxdxbxegedabagacad
-  export LS_COLORS='di=34:ln=35:so=32:pi=33:ex=31:bd=46;34:cd=43;34:su=41;30:sg=46;30:tw=42;30:ow=43;30'
-  zstyle ':completion:*' list-colors \
-    'di=34' 'ln=35' 'so=32' 'ex=31' 'bd=46;34' 'cd=43;34'
-  ;;
-esac
+# git
+autoload -Uz vcs_info
+autoload -Uz add-zsh-hook
+setopt prompt_subst
+zstyle ':vcs_info:*' enable git
+zstyle ':vcs_info:*' formats '(%s)-[%b]'
+zstyle ':vcs_info:*' actionformats '(%s)-[%b|%a]'
+function _update_vcs_info_msg() {
+  psvar=()
+  LANG=en_US.UTF-8 vcs_info
+  if [[ -z ${vcs_info_msg_0_} ]]; then
+    RPROMPT=""
+  else
+    RPROMPT="%F{cyan}${vcs_info_msg_0_}%f"
+  fi
+}
+add-zsh-hook precmd _update_vcs_info_msg
 
 # alias 
 alias ls='ls -G -F -a'
 alias rm='rm -i'
 alias cp='cp -i'
 alias mv='mv -i'
+alias es='exec $SHELL'
 alias g='git'
 alias gps='git push'
 alias gpl='git pull'
@@ -84,25 +102,6 @@ setopt hist_save_nodups
 # func
 functions chpwd(){ ls -G -F -a}
 
-# func Enter
-functions do_enter(){
-  if [ -n "$BUFFER" ]; then
-      zle accept-line
-    return 0
-  fi
-  echo
-  ls
-  if [ "$(git rev-parse --is-inside-work-tree 2> /dev/null)" = 'true' ]; then
-    echo
-    echo -e "\e[0;33m--- git status ---\e[0m"
-    git status -sb
-  fi
-  zle reset-prompt
-  return 0
-}
-zle -N do_enter
-bindkey '^m' do_enter
-
 # func Git <u> repo top
 # function u(){
 #  cd ./$(git rev-parse --show-cdup)
@@ -110,3 +109,23 @@ bindkey '^m' do_enter
 #    cd $1
 #  fi
 # }
+
+# func Enter
+#functions do_enter(){
+#  if [ -n "$BUFFER" ]; then
+#      zle accept-line
+#    return 0
+#  fi
+#  echo
+#  ls
+#  if [ "$(git rev-parse --is-inside-work-tree 2> /dev/null)" = 'true' ]; then
+#    echo
+#    echo -e "\e[0;33m--- git status ---\e[0m"
+#    git status -sb
+#  fi
+#  zle reset-prompt
+#  return 0
+#}
+#zle -N do_enter
+#bindkey '^m' do_enter
+
