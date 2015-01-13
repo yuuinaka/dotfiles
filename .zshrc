@@ -70,7 +70,13 @@ alias gdf='git diff'
 alias gs='git status'
 alias gb='git branch'
 alias gco='git checkout'
+alias gc='git commit'
 alias gca='git commit -a'
+alias gsp='git stash pop'
+alias gss='git stash save'
+alias gsl='git stash list'
+alias gfo='git fetch origin'
+alias grh='git reset --hard' # origin/branchname
 
 # MacVim
 if [[ -d /Applications/MacVim.app ]]; then
