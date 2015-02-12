@@ -63,6 +63,8 @@ alias rm='rm -i'
 alias cp='cp -i'
 alias mv='mv -i'
 alias es='exec $SHELL'
+
+# git
 alias g='git'
 alias gps='git push'
 alias gpl='git pull'
@@ -77,6 +79,9 @@ alias gss='git stash save'
 alias gsl='git stash list'
 alias gfo='git fetch origin'
 alias grh='git reset --hard' # origin/branchname
+
+# jxa
+alias jxa='osascript -l JavaScript'
 
 # MacVim
 if [[ -d /Applications/MacVim.app ]]; then
