@@ -90,6 +90,7 @@ fi
 alias .vr='vim $HOME/.vimrc'
 alias .zr='vim $HOME/.zshrc'
 alias .gc='vim $HOME/.gitconfig'
+alias modified='vim -p $(git ls-files --modified)'
 
 # setopt
 # cd
