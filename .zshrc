@@ -75,9 +75,11 @@ alias gco='git checkout'
 alias gc='git commit'
 alias gca='git commit -a'
 alias gsp='git stash pop'
-alias gss='git stash save'
+alias gss='git stash save -u'
 alias gsl='git stash list'
 alias gfo='git fetch origin'
+alias glog='git log'
+alias grb='git rebase' # origin/branchname
 alias grh='git reset --hard' # origin/branchname
 
 # jxa
