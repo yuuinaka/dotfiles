@@ -3,6 +3,7 @@
 	email = yuuinaka@gmail.com
 [core]
 	editor = /usr/bin/vim
+  excludesfile = /Users/yuuinaka/.gitignore
 [color]
 	ui = auto
 [alias]
