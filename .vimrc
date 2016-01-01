@@ -102,6 +102,9 @@ nnoremap <silent> <Space>. :<C-u>edit $MYVIMRC<CR>
 "grep
 nnoremap cn :cnext<CR>
 nnoremap cp :cprevious<CR>
+"paste
+nnoremap p "0p
+nnoremap P "0P
 
 "ZSpace
 function! ZSpace()
