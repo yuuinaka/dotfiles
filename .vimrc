@@ -53,7 +53,6 @@ set scrolloff=10
 "colorscheme molokai
 colorscheme jellybeans
 "colorscheme iceberg
-syntax on
 
 "cursor position
 au BufWritePost * mkview
@@ -103,8 +102,8 @@ nnoremap <silent> <Space>. :<C-u>edit $MYVIMRC<CR>
 nnoremap cn :cnext<CR>
 nnoremap cp :cprevious<CR>
 "paste
-nnoremap p "0p
-nnoremap P "0P
+"nnoremap p "0p
+"nnoremap P "0P
 
 "ZSpace
 function! ZSpace()
@@ -126,64 +125,34 @@ augroup numberwidth
   autocmd BufEnter,WinEnter,BufWinEnter * let &l:numberwidth = len(line("$")) + 2
 augroup END
 
-"bundle
-function! s:WithoutBundles()
-  colorscheme desert
-endfunction
-
-function! s:LoadBundles()
-  NeoBundle 'Shougo/neobundle.vim'
-  NeoBundle 'tpope/vim-surround'
-  NeoBundle 'tomasr/molokai'
-  NeoBundle 'nanotech/jellybeans.vim'
-  NeoBundle 'cocopon/iceberg.vim'
-  NeoBundle 'bling/vim-airline'
-  NeoBundle 'scrooloose/nerdtree'
-  NeoBundle 'thinca/vim-quickrun'
-  NeoBundle 'Shougo/neocomplcache'
-  NeoBundle 'mattn/emmet-vim'
-  NeoBundle 'othree/html5.vim'
-  NeoBundle 'hail2u/vim-css3-syntax'
-  NeoBundle 'pangloss/vim-javascript'
-  NeoBundle 'tpope/vim-markdown'
-  NeoBundle 'tyru/open-browser.vim'
-  NeoBundle 'Shougo/unite.vim'
-  NeoBundle 'Lokaltog/vim-easymotion'
-  NeoBundle 'Yggdroot/indentLine'
-  NeoBundle 'tmhedberg/matchit'
-  NeoBundle 'groenewege/vim-less'
-  NeoBundle 'leafgarland/typescript-vim'
-  NeoBundle 'osyo-manga/vim-over'
-endfunction
-
-function! s:InitNeoBundle()
-  if isdirectory(expand("~/.vim/bundle/neobundle.vim/"))
-    filetype plugin indent off
-    if has('vim_starting')
-      set runtimepath+=~/.vim/bundle/neobundle.vim/
-    endif
-    try
-      call neobundle#begin(expand('~/.vim/bundle/'))
-      call s:LoadBundles()
-      call neobundle#end()
-    catch
-      call s:WithoutBundles()
-    endtry
-  else
-    call s:WithoutBundles()
+"dein
+let g:rc_dir = expand('~/.vim/rc')
+let s:dein_dir = expand('~/.vim/dein')
+let s:dein_repo_dir = s:dein_dir . '/repos/github.com/Shougo/dein.vim'
+if &runtimepath !~# '/dein.vim'
+  if !isdirectory(s:dein_repo_dir)
+    execute '!git clone https://github.com/Shougo/dein.vim' s:dein_repo_dir
   endif
-
-  filetype indent plugin on
-  syntax on
-endfunction
-
-call s:InitNeoBundle()
+  execute 'set runtimepath^=' . fnamemodify(s:dein_repo_dir, ':p')
+endif
+if dein#load_state(s:dein_dir)
+  call dein#begin(s:dein_dir)
+  "toml
+  let s:toml      = g:rc_dir . '/dein.toml'
+  "let s:lazy_toml = g:rc_dir . '/dein_lazy.toml'
+  call dein#load_toml(s:toml,      {'lazy': 0})
+  "call dein#load_toml(s:lazy_toml, {'lazy': 1})
+  call dein#end()
+  call dein#save_state()
+endif
+if dein#check_install()
+  call dein#install()
+endif
 
 "nerdtree
-autocmd VimEnter * NERDTree
-autocmd VimEnter * wincmd p
-"autocmd VimEnter * if !argc() | NERDTree | endif
-autocmd BufEnter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
+autocmd vimenter * NERDTree
+autocmd vimEnter * wincmd p
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 let NERDTreeWinSize=30
 let g:NERDTreeShowHidden=1
 let g:NERDTreeShowBookmarks=1
@@ -221,3 +190,6 @@ hi EasyMotionShade  ctermbg=none ctermfg=blue
 
 "indentLine
 let g:indentLine_faster = 1
+
+syntax on
+
