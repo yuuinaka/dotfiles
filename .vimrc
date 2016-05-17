@@ -166,7 +166,9 @@ inoremap <expr><Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
 
 "emmet
 let g:user_emmet_settings = {
-\   'lang' : 'ja',
+\   'variables' : {
+\     'lang' : "ja"
+\   },
 \   'javascript' : {
 \     'snippets' : {
 \       'jq' : "\\$(function() {\n\t${cursor}${child}\n});"
