@@ -70,7 +70,7 @@ alias gps='git push'
 alias gpl='git pull'
 alias gdf='git diff'
 alias gs='git status'
-alias gb='git branch'
+alias gb='git branch -vv'
 alias gco='git checkout'
 alias gc='git commit'
 alias gca='git commit -a'
@@ -82,6 +82,7 @@ alias gfo='git fetch origin'
 alias glog='git log'
 alias grb='git rebase' # origin/branchname
 alias grh='git reset --hard' # origin/branchname
+alias gus='git branch -u origin/'
 
 # jxa
 alias jxa='osascript -l JavaScript'
