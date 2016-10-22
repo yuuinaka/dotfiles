@@ -105,6 +105,9 @@ nnoremap cp :cprevious<CR>
 "nnoremap p "0p
 "nnoremap P "0P
 
+"vue
+autocmd BufNewFile,BufRead *.vue set filetype=html
+
 "ZSpace
 function! ZSpace()
   highlight ZSpace cterm=underline ctermbg=yellow gui=underline guifg=darkgrey
