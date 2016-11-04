@@ -21,6 +21,7 @@ set whichwrap=b,s,h,l
 "file
 set nobackup
 set noswapfile
+set noundofile
 
 "search
 set hlsearch
