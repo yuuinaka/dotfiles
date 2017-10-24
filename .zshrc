@@ -63,6 +63,7 @@ alias rm='rm -i'
 alias cp='cp -i'
 alias mv='mv -i'
 alias es='exec $SHELL'
+alias shutdown='sudo shutdown -h now' # for raspberry pi
 
 # git
 alias g='git'
