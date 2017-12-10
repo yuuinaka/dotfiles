@@ -65,6 +65,12 @@ repo = 'osyo-manga/vim-over'
 repo = 'Yggdroot/indentLine'
 
 [[plugins]]
+repo = 'xolox/vim-misc'
+
+[[plugins]]
+repo = 'xolox/vim-session'
+
+[[plugins]]
 repo = 'mxw/vim-jsx'
 on_ft = 'javascript'
 
