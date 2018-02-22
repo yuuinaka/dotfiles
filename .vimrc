@@ -68,6 +68,7 @@ noremap J 5j
 noremap K 5k
 noremap L 5l
 noremap H 5h
+noremap <C-j> J
 nnoremap j gj
 xnoremap j gj
 nnoremap k gk
