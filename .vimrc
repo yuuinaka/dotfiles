@@ -1,5 +1,10 @@
 set nocompatible
 
+"autoread
+autocmd BufWritePost * sleep 1
+autocmd BufWritePost * checktime
+set autoread
+
 "encoding
 set encoding=utf-8
 
@@ -16,6 +21,7 @@ set ambiwidth=double
 set display=lastline
 
 "move
+set isk-=_
 set whichwrap=b,s,h,l
 
 "file
@@ -109,6 +115,7 @@ nnoremap cp :cprevious<CR>
 
 "vue
 autocmd BufNewFile,BufRead *.vue set filetype=html
+autocmd BufNewFile,BufRead *.json5 set filetype=javascript
 
 "ZSpace
 function! ZSpace()
