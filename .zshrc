@@ -1,3 +1,6 @@
+# vim!
+bindkey -v
+
 # LANG
 export LANG=ja_JP.UTF-8
 
@@ -64,6 +67,11 @@ alias cp='cp -i'
 alias mv='mv -i'
 alias es='exec $SHELL'
 alias shutdown='sudo shutdown -h now' # for raspberry pi
+alias disk="df -h"
+alias www='python -m SimpleHTTPServer 8000'
+alias ipe='curl ipinfo.io/ip'
+alias ipi='ipconfig getifaddr NIC'
+alias c='clear'
 
 # git
 alias g='git'
