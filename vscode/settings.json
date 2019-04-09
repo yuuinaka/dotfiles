@@ -1,0 +1,36 @@
+{
+    "editor.fontSize": 14,
+    "vim.insertModeKeyBindings": [
+        {
+            "before": ["j","j"],
+            "after": ["<Esc>"]
+        },
+        {
+            "before": ["k","k"],
+            "after": ["<Esc>"]
+        }
+    ],
+    "vim.normalModeKeyBindings": [
+        {
+            "before": ["J"],
+            "after": ["5", "j"]
+        },
+        {
+            "before": ["K"],
+            "after": ["5", "k"]
+        },
+        {
+            "before": ["H"],
+            "after": ["5", "h"]
+        },
+        {
+            "before": ["L"],
+            "after": ["5", "l"]
+        },
+        {
+            "before": ["<C-j>"],
+            "after": ["J"]
+        }
+    ],
+    "workbench.colorTheme": "Abyss"
+}
