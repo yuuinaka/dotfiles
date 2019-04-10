@@ -32,7 +32,48 @@
             "after": ["J"]
         }
     ],
+    "vim.visualModeKeyBindings": [
+        {
+            "before": ["J"],
+            "after": ["5", "j"]
+        },
+        {
+            "before": ["K"],
+            "after": ["5", "k"]
+        },
+        {
+            "before": ["H"],
+            "after": ["5", "h"]
+        },
+        {
+            "before": ["L"],
+            "after": ["5", "l"]
+        },
+        {
+            "before": ["<C-j>"],
+            "after": ["J"]
+        }
+    ],
+    "vim.normalModeKeyBindingsNonRecursive": [
+        {
+            "before": ["n"],
+            "after": ["n", "z", "z"]
+        },
+        {
+            "before": ["N"],
+            "after": ["N", "z", "z"]
+        }
+    ],
     "workbench.colorTheme": "Abyss",
     "terminal.integrated.fontSize": 14,
-    "workbench.sideBar.location": "right"
+    "workbench.sideBar.location": "right",
+    "git.autofetch": true,
+    "vim.highlightedyank.enable": true,
+    "vim.statusBarColorControl": true,
+    "workbench.colorCustomizations": {
+        "statusBar.background": "#005f5f",
+        "statusBar.noFolderBackground": "#005f5f",
+        "statusBar.debuggingBackground": "#005f5f"
+    },
+    "vim.useSystemClipboard": true
 }
