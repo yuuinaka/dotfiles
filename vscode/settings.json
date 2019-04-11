@@ -56,6 +56,14 @@
     ],
     "vim.normalModeKeyBindingsNonRecursive": [
         {
+            "before": ["j"],
+            "after": ["g", "j"]
+        },
+        {
+            "before": ["k"],
+            "after": ["g", "k"]
+        },
+        {
             "before": ["n"],
             "after": ["n", "z", "z"]
         },
@@ -64,7 +72,7 @@
             "after": ["N", "z", "z"]
         }
     ],
-    "workbench.colorTheme": "Abyss",
+    "workbench.colorTheme": "Monokai Dimmed",
     "terminal.integrated.fontSize": 14,
     "workbench.sideBar.location": "right",
     "git.autofetch": true,
@@ -75,5 +83,7 @@
         "statusBar.noFolderBackground": "#005f5f",
         "statusBar.debuggingBackground": "#005f5f"
     },
-    "vim.useSystemClipboard": true
+    "vim.useSystemClipboard": true,
+    "terminal.integrated.shell.osx": "/bin/zsh",
+    "vim.whichwrap": "b,s,h,l"
 }
