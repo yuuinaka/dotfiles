@@ -72,7 +72,7 @@
             "after": ["N", "z", "z"]
         }
     ],
-    "workbench.colorTheme": "Monokai Dimmed",
+    "workbench.colorTheme": "Monokai",
     "terminal.integrated.fontSize": 14,
     "workbench.sideBar.location": "right",
     "git.autofetch": true,
@@ -85,5 +85,7 @@
     },
     "vim.useSystemClipboard": true,
     "terminal.integrated.shell.osx": "/bin/zsh",
-    "vim.whichwrap": "b,s,h,l"
+    "vim.whichwrap": "b,s,h,l",
+    "vim.hlsearch": true,
+    "vim.searchHighlightColor": "#999999"
 }
