@@ -1,3 +1,6 @@
+# plugins
+source ~/.zsh/z/z.sh
+
 # vim!
 bindkey -v
 
@@ -97,9 +100,9 @@ alias gus='git branch -u origin/'
 alias jxa='osascript -l JavaScript'
 
 # MacVim
-if [[ -d /Applications/MacVim.app ]]; then
-  alias vim='env LANG=ja_JP.UTF-8 /Applications/MacVim.app/Contents/MacOS/Vim "$@"'
-fi
+#if [[ -d /Applications/MacVim.app ]]; then
+#  alias vim='env LANG=ja_JP.UTF-8 /Applications/MacVim.app/Contents/MacOS/Vim "$@"'
+#fi
 alias .vr='vim $HOME/.vimrc'
 alias .zr='vim $HOME/.zshrc'
 alias .gc='vim $HOME/.gitconfig'
