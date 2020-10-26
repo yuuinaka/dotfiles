@@ -1,0 +1,50 @@
+{
+	"何日": {
+	 	"scope": "markdown",
+	 	"prefix": "dd",
+	 	"body": [
+	 		"$CURRENT_YEAR/$CURRENT_MONTH/$CURRENT_DATE"
+	 	],
+	 	"description": ""
+	},
+	"ATextLink": {
+	 	"scope": "html,vue",
+	 	"prefix": "textlink",
+	 	"body": [
+	 		"<ATextLink :href=''></ATextLink>"
+	 	],
+	 	"description": "テキストリンクコンポーネント"
+	},
+	"is-external-link": {
+	 	"scope": "html,vue",
+	 	"prefix": "exlink",
+	 	"body": [
+	 		"is-external-link"
+	 	],
+	 	"description": "外部リンク"
+	},
+	"c-icon-notice": {
+	 	"scope": "html,vue",
+	 	"prefix": "iconnotice",
+	 	"body": [
+	 		"c-icon-notice"
+	 	],
+	 	"description": "注記アイコン"
+	},
+	"c-notice__item-numbered": {
+	 	"scope": "html,vue",
+	 	"prefix": "num",
+	 	"body": [
+	 		"c-notice__item-numbered"
+	 	],
+	 	"description": "番号あり注記"
+	},
+	"c-notice__item-no-numbered": {
+	 	"scope": "html,vue",
+	 	"prefix": "nonum",
+	 	"body": [
+	 		"c-notice__item-no-numbered"
+	 	],
+	 	"description": "番号なし注記"
+	}
+}
