@@ -1,59 +1,5 @@
 {
     "editor.fontSize": 14,
-    "vim.insertModeKeyBindings": [
-        {
-            "before": ["j","j"],
-            "after": ["<Esc>"]
-        },
-        {
-            "before": ["k","k"],
-            "after": ["<Esc>"]
-        }
-    ],
-    "vim.normalModeKeyBindings": [
-        {
-            "before": ["J"],
-            "after": ["5", "j"]
-        },
-        {
-            "before": ["K"],
-            "after": ["5", "k"]
-        },
-        {
-            "before": ["H"],
-            "after": ["5", "h"]
-        },
-        {
-            "before": ["L"],
-            "after": ["5", "l"]
-        },
-        {
-            "before": ["<C-j>"],
-            "after": ["J"]
-        }
-    ],
-    "vim.visualModeKeyBindings": [
-        {
-            "before": ["J"],
-            "after": ["5", "j"]
-        },
-        {
-            "before": ["K"],
-            "after": ["5", "k"]
-        },
-        {
-            "before": ["H"],
-            "after": ["5", "h"]
-        },
-        {
-            "before": ["L"],
-            "after": ["5", "l"]
-        },
-        {
-            "before": ["<C-j>"],
-            "after": ["J"]
-        }
-    ],
     "vim.normalModeKeyBindingsNonRecursive": [
         {
             "before": ["j"],
@@ -87,5 +33,6 @@
     "terminal.integrated.shell.osx": "/bin/zsh",
     "vim.whichwrap": "b,s,h,l",
     "vim.hlsearch": true,
-    "vim.searchHighlightColor": "#999999"
+    "vim.searchHighlightColor": "#999999",
+    "vim.easymotion": true,
 }
