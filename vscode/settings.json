@@ -35,4 +35,7 @@
     "vim.hlsearch": true,
     "vim.searchHighlightColor": "#999999",
     "vim.easymotion": true,
+    "editor.codeActionsOnSave": {
+        "source.fixAll.eslint": true
+    }
 }
